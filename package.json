@@ -7,12 +7,21 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "pod": "cd ios && pod install && cd .."
   },
   "dependencies": {
+    "@datacomvn/file-opener": "^0.1.6",
+    "@datacomvn/lunar-date-picker": "^0.1.2",
+    "@datacomvn/progress-and-modal": "^0.1.14",
+    "@react-native/new-app-screen": "^0.80.0",
+    "@react-navigation/native": "^7.1.14",
+    "@react-navigation/native-stack": "^7.3.21",
     "react": "19.1.0",
     "react-native": "0.80.0",
-    "@react-native/new-app-screen": "0.80.0"
+    "react-native-nitro-modules": "^0.26.2",
+    "react-native-safe-area-context": "^5.5.0",
+    "react-native-screens": "^4.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
