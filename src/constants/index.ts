@@ -54,8 +54,8 @@ export const DEMO_ITEMS = [
 // File Opener constants
 export const SAMPLE_FILE_PATHS: SamplePath[] = [
   {
-    displayName: 'fare_report_20250612_211508.xlsx',
-    path: '/Users/duongnv/Library/Developer/CoreSimulator/Devices/695D8942-7EE9-4FBF-B799-AD2485BFA36C/data/Containers/Shared/AppGroup/68E44F13-9B54-4506-9569-266D208F6B03/File Provider Storage/fare_report_20250612_211508.xlsx',
+    displayName: 'demo-0104F0D5-513C-4FC3-82A5-A07C02205E3D.jpg',
+    path: '/Users/datacom/Library/Developer/CoreSimulator/Devices/B06D51D2-B50F-4BDE-A0EF-F606E2A7E26A/data/tmp/drag-F43B4D74-729E-4CB2-9F08-3D01D290B92C/demo-0104F0D5-513C-4FC3-82A5-A07C02205E3D.jpg',
   },
   {
     displayName: 'document.pdf',
@@ -84,8 +84,18 @@ export const LUNAR_PICKER_CONFIG = {
   languages: {
     vi: {
       monthNames: [
-        'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
-        'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12',
+        'Tháng 1',
+        'Tháng 2',
+        'Tháng 3',
+        'Tháng 4',
+        'Tháng 5',
+        'Tháng 6',
+        'Tháng 7',
+        'Tháng 8',
+        'Tháng 9',
+        'Tháng 10',
+        'Tháng 11',
+        'Tháng 12',
       ],
       weekdayNames: ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'],
     },
@@ -173,7 +183,8 @@ export const DEFAULT_VALUES = {
   TOAST_COLOR: '#FF00003B' as string,
   LOADING_TITLE: 'Loading...' as string,
   LOADING_SUBTITLE: 'Please wait...' as string,
-  FILE_PATH_PLACEHOLDER: 'Ví dụ: /storage/emulated/0/Download/file.pdf' as string,
+  FILE_PATH_PLACEHOLDER:
+    'Ví dụ: /storage/emulated/0/Download/file.pdf' as string,
 };
 
 // Price generation config
@@ -181,4 +192,4 @@ export const PRICE_CONFIG = {
   MIN_PRICE: 500000, // 500k VND
   MAX_PRICE: 1500000, // 1.5M VND
   SAMPLE_DAYS: 30,
-} as const; 
+} as const;

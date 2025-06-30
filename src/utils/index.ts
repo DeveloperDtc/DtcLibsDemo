@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { PRICE_CONFIG } from '../constants';
 import type { PriceData } from '../types';
 
@@ -45,31 +46,44 @@ export const generateSamplePrices = (): PriceData[] => {
 
 export const generatePricesForMonth = (year: number, month: number): PriceData[] => {
   const prices: PriceData[] = [];
-  const daysInMonth = new Date(year, month, 0).getDate();
   
-  // Generate all prices first
+  // Sử dụng dayjs để xử lý ngày tháng (month 1-12: 1=January, 12=December)
+  // Tạo ngày đầu tháng và lấy số ngày trong tháng
+  const startOfMonth = dayjs().year(year).month(month - 1).startOf('month');
+  const daysInMonth = startOfMonth.daysInMonth();
+  
+  console.log(`Generating prices for ${year}-${month.toString().padStart(2, '0')} (${daysInMonth} days)`);
+  console.log(`Start of month: ${startOfMonth.format('YYYY-MM-DD')}`);
+  
+  // Generate all prices for each day in the month
   for (let day = 1; day <= daysInMonth; day++) {
-    const date = new Date(year, month - 1, day);
+    const currentDate = startOfMonth.date(day);
+    const dateString = currentDate.format('YYYY-MM-DD');
+    
     prices.push({
-      date: formatDateToString(date),
+      date: dateString,
       price: generateRandomPrice(),
       isCheapest: false, // Will be updated after finding the cheapest
     });
   }
   
+  console.log(`Generated ${prices.length} prices, first: ${prices[0]?.date}, last: ${prices[prices.length - 1]?.date}`);
+  
   // Find the day with the lowest price
-  let cheapestIndex = 0;
-  let lowestPrice = prices[0].price;
-  
-  for (let i = 1; i < prices.length; i++) {
-    if (prices[i].price < lowestPrice) {
-      lowestPrice = prices[i].price;
-      cheapestIndex = i;
+  if (prices.length > 0) {
+    let cheapestIndex = 0;
+    let lowestPrice = prices[0].price;
+    
+    for (let i = 1; i < prices.length; i++) {
+      if (prices[i].price < lowestPrice) {
+        lowestPrice = prices[i].price;
+        cheapestIndex = i;
+      }
     }
+    
+    // Mark the cheapest day
+    prices[cheapestIndex].isCheapest = true;
   }
-  
-  // Mark the cheapest day
-  prices[cheapestIndex].isCheapest = true;
   
   return prices;
 };

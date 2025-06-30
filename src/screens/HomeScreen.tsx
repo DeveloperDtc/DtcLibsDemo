@@ -47,7 +47,7 @@ const HomeScreen: React.FC = () => {
 
       <View style={styles.footer}>
         <Text style={styles.footerText}>
-          © 2024 DatacomVN - React Native Libraries v{APP_CONFIG.VERSION}
+          © 2024 DatacomVN - React Native Libraries
         </Text>
       </View>
     </ScrollView>
