@@ -9,10 +9,10 @@
     "start": "react-native start",
     "test": "jest",
     "pod": "cd ios && pod install && cd ..",
-    "build-apk": "cd android && ./gradlew assembleDebug && cd .. && open android/app/build/outputs/apk/debug"
+    "build-apk": "cd android && ./gradlew assembleRelease && cd .. && open android/app/build/outputs/apk/release"
   },
   "dependencies": {
-    "@datacomvn/file-opener": "^0.1.7",
+    "@datacomvn/file-opener": "^0.1.8",
     "@datacomvn/lunar-date-picker": "^0.1.11",
     "@datacomvn/progress-and-modal": "^0.1.16",
     "@react-native/new-app-screen": "^0.80.0",
