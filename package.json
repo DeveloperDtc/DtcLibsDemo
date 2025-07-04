@@ -8,12 +8,13 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "pod": "cd ios && pod install && cd .."
+    "pod": "cd ios && pod install && cd ..",
+    "build-apk": "cd android && ./gradlew assembleDebug && cd .. && open android/app/build/outputs/apk/debug"
   },
   "dependencies": {
-    "@datacomvn/file-opener": "^0.1.6",
-    "@datacomvn/lunar-date-picker": "^0.1.5",
-    "@datacomvn/progress-and-modal": "^0.1.14",
+    "@datacomvn/file-opener": "^0.1.7",
+    "@datacomvn/lunar-date-picker": "^0.1.11",
+    "@datacomvn/progress-and-modal": "^0.1.16",
     "@react-native/new-app-screen": "^0.80.0",
     "@react-navigation/native": "^7.1.14",
     "@react-navigation/native-stack": "^7.3.21",
